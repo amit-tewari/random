@@ -8,17 +8,17 @@ use Spreadsheet::ParseExcel::Simple;
 binmode STDOUT, ':utf8';
 my $counter=0;
 my (%salary_min, %salary_max, %stipend);
-my (%pay_masters, %company_skills, %skills);
+my (%pay_masters, %company_skills, %hpay_company_skills, %skills, %hpay_skills);
 my @h_pay_masters;
 
   my $xls = Spreadsheet::ParseExcel::Simple->read('/home/at/Downloads/Company_list.xls');
   foreach my $sheet ($xls->sheets) {
-     while ($sheet->has_data 
+     while ($sheet->has_data
          ##&& $counter <=2
-            ) { 
+            ) {
          $counter++;
-         #next if ( $counter <= 59 or $counter <=62); 
-         next if ( $counter == 1); 
+         #next if ( $counter <= 59 or $counter <=62);
+         next if ( $counter == 1);
          my ($company, $location, $salary, $skills) = ($sheet->next_row)[0,1,4,5];
          $location = uc $location;
          $skills = uc $skills;
@@ -40,14 +40,28 @@ my @h_pay_masters;
                 push @{ $pay_masters{"H"}}, $location." : ".$sal_range." : ".$company;
                 $pay_masters{$company}=$location." : ".$sal_range;
                 push @h_pay_masters, $company;
+                $hpay_company_skills{$company}=$skills;
+                    my @skills= split (",", $skills);
+                    foreach (@skills){
+                        my $temp = $_ ;
+                        $temp =~ s/^\s+|\s+$//g;
+                        $hpay_skills{$temp}++;
+                        }
             }
         if ( defined ($salary_min) && $salary_min > 600000) {
-                push @{ $pay_masters{"H"}}, $location." : ".$sal_range." : ".$company; 
+                push @{ $pay_masters{"H"}}, $location." : ".$sal_range." : ".$company;
                 $pay_masters{$company}=$location." : ".$sal_range;
                 push @h_pay_masters, $company;
+                $hpay_company_skills{$company}=$skills;
+                    my @skills= split (",", $skills);
+                    foreach (@skills){
+                        my $temp = $_ ;
+                        $temp =~ s/^\s+|\s+$//g;
+                        $hpay_skills{$temp}++;
+                        }
             }
 
-        $skills =~ tr/\/,\./ /d;
+            #$skills =~ tr/\/,\./ /d;
         $company_skills{$company}=$skills;
         my @skills= split (" ", $skills);
         foreach (@skills){
@@ -59,9 +73,17 @@ print Dumper (\%pay_masters);
 foreach (@h_pay_masters){
     printf "%s %s %s\n",$_, $pay_masters{$_}, $company_skills{$_};
 }
+printf "\nAll skills:\n";
 my @unique = sort ({$skills{$b} <=> $skills{$a}  } keys %skills);
 foreach (@unique){
+    #next;
     printf "%s %s\n",$_, $skills{$_};
+}
+printf "\nTop paying skills:\n";
+#@unique = sort ({$hpay_skills{$b} <=> $hpay_skills{$a}  } keys %hpay_skills);
+@unique = sort (keys %hpay_skills);
+foreach (@unique){
+    printf "%s %s\n",$_, $hpay_skills{$_};
 }
 exit 0;
   foreach (sort keys %salary_min)
