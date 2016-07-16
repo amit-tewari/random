@@ -1,0 +1,93 @@
+# For Liva X box
+# Specs : http://www.ecs.com.tw/ECSWebSite/Product/Product_LIVA_SPEC.aspx?DetailID=1593&LanID=0
+
+Motivation : Arch as rolling release, headless, systemd-nspawn host for a 24x7 box
+providing NTP, DNS, HTTP proxy, SOHO DHCP, Apt-cacher-ng via Debian stable releases.
+
+Download
+========
+refer : https://www.archlinux.org/download/
+
+Installation media preparation
+==============================
+Used Rufus (https://rufus.akeo.ie/) to create a bootable USB in ISO mode.
+* DD mode had problems in booting box (No time spent in finding what was
+  broken).
+
+Installation
+============
+* Reset BIOS Settings to optimized defaults
+* Boot with USB inserted in Liva box
+* F7 and choose Arch ISO to boot
+* After reaching root prompt (#)
+	# wifi-menu				# start wifi connection
+	# cgdisk /dev/mmcblk0
+		256MB ESP (/dev/mmcblk0p1)
+		Rest All space to root partition (/dev/mmcblk0p2)
+	# mkfs.vfat -F32 /dev/mmcblk0p1
+	# mkfs.ext4 -L arch-root /dev/mmcblk0p2
+	# mount /dev/mmcblk0p2 /mnt
+	# mkdir -p /mnt/boot/efi
+	# mount /dev/mmcblk0p1 /mnt/boot/efi
+	# pacstrap /mnt base grub-efi-x86_64 efibootmgr dialog wpa_supplicant
+	# genfstab -pU /mnt >> /mnt/etc/fstab
+		(note : * pay attention to UUID values for / and /boot/efi in fstab	)
+		(		should match to values listed by 'lsblk'					)
+		(		* replace relatime with noatime to reduce MMC wear			)
+	# echo 'tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0' >> /mnt/etc/fstab
+	# arch-chroot /mnt /bin/bash
+	# ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+	# echo MYHOSTNAME > /etc/hostname
+	# echo LANG=en_US.UTF-8 > /etc/locale.conf
+	# echo LANGUAGE=en_US >> /etc/locale.conf
+	# echo LC_ALL=C >> /etc/locale.conf
+	# useradd -m -g users -G wheel,storage,power MYUSERNAME
+	# passwd MYUSERNAME
+	# passwd					# set root passwd
+	# vi /etc/locale.gen		# choose appropriate locales
+	# locale-gen
+	# vim /etc/mkinitcpio.conf # add ext4 to MUDULES list
+	# mkinitcpio -p linux
+	# grub-install
+	# grub-mkconfig -o /boot/grub/grub.cfg
+	# pacman -S bash-completion
+	# sync
+	# exit
+	# umount -R /mnt
+	# reboot
+
+
+Post Installation (console)
+===========================
+Login as root for this one time
+	# wifi-menu -o
+	# netctl list
+	# netctl enable LISTED-WIFI-PROFILE
+	# ip a s				# note IP to connect to
+	# pacman -S openssh sudo	# Add 'MYUSERNAME ALL=(ALL) NOPASSWD: ALL'
+	# systemctl enable sshd
+	# ss -lt4			# verify ssh is running
+
+
+Post Installation (on ssh)
+===========================
+	$ ssh MYUSERNAME
+	$ sudo pacman -S base-devel git vim arch-install-scripts debootstrap
+	$ mkdir aur
+	$ cd aur
+	$ git clone https://aur.archlinux.org/debian-archive-keyring.git
+	$ cd debian-archive-keyring/
+	$ makepkg -sri
+	$ cd ..
+	$ git clone https://aur.archlinux.org/gnupg1.git
+	$ cd gnupg1
+	$ gpg --keyserver pgpkeys.mit.edu --recv-keys 2071B08A33BD3F06
+	$ makepkg -sri
+	$ 
+	$ 
+	$ 
+	$ 
+	$ 
+	$ 
+	$ 
+	$ 
