@@ -91,3 +91,80 @@ Post Installation (on ssh)
 	$ 
 	$ 
 	$ 
+
+
+Guest install (Jessie)
+	# cd /var/lib/machines
+	# debootstrap jessie jessie
+	# systemd-nspawn -D jessie
+		jessie # passwd				# set jessie's root password
+		jessie # apt-get install openssh-server
+		jessie # vi /etc/ssh/sshd_config		# use a different Port
+		jessie # ^]^]^]
+	# systemctl start machines.target
+TODO: fix line below
+	#						# remove --network-veth -U from ExecStart from
+machines.service
+	# systemctl start systemd-nspawn@jessie
+	# machinectl list
+
+
+Network Bonding
+===============
+WIFI-INTERFACE and ETHERNET-INTERFACE are names from '# ip link' command
+Wired and Wireless should get same IP
+	# pacman -S ifenslave
+	# echo 'bonding' > /etc/modules-load.d/bonding.conf
+	# vi /etc/wpa_supplicant/wpa_supplicant-WIFI-INTERFACE.conf
+wpa_supplicant-WIFI-INTERFACE.conf
+network={
+	ssid="YOUR-SSID"
+	proto=WPA
+	key_mgmt=WPA-PSK
+	pairwise=TKIP
+	group=TKIP
+	psk="YOUR PRE SHARED KEY"
+	wpa_ptk_rekey=600
+	priority=2
+
+	# systemctl enable wpa_supplicant
+	# systemctl enable wpa_supplicant@WIFI-INTERFACE
+	# systemctl enable systemd-networkd
+	# cd /etc/systemd/network/
+	# vi 20-bond0.netdev
+[NetDev]
+Name=bond0
+Kind=bond
+	# vi 50-bonding-master.network
+[Match]
+Name=bond0
+
+[Network]
+DHCP=ipv4
+	# vi 50-bonding-primary.network
+[Match]
+Name=ETHERNET-INTERFACE
+
+[Network]
+Bond=bond0
+	# vi 50-bonding-slave.network
+[Match]
+Name=WIFI-INTERFACE
+
+[Network]
+Bond=bond0
+
+	# mkdir /etc/systemd/system/wpa_supplicant@WIFI-INTERFACE.service.d
+	# cd /etc/systemd/system/wpa_supplicant@WIFI-INTERFACE.service.d
+	# vi customdependency.conf
+[Unit]
+After=systemd-networkd.service
+#to prevernt 'wlan0 is up - this may be due to an out of date ifenslave'
+	# systemctl restart systemd-networkd
+	# reboot
+
+Network should be up if details configurations done properly
+
+
+NTP
+	# timedatectl set-ntp true
