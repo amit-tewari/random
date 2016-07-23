@@ -1,0 +1,41 @@
+App Inventor2 local install (Debian Jessie):
+
+AI2 reference documentation :
+- http://ai2.appinventor.mit.edu/reference/other/extensions.html
+- https://docs.google.com/document/d/1Xc9yt02x3BRoq5m1PJHBr81OOv69rEBy8LVG_84j9jc/pub#h.6y8gcyo56euq
+
+JDK 1.7.0_72 download link:
+- http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html#jdk-7u72-oth-JPR
+Build for Debian : https://wiki.debian.org/JavaPackage
+# add 'contrib' to sources.list
+# apt-get update && apt-get install java-package && exit
+# apt-get install libgl1-mesa-glx libgtk2.0-0 libxslt1.1 libxxf86vm1
+$ make-jpkg jdk-7u72-linux-x64.tar.gz
+# dpkg -i oracle-java7-jdk_7u72_amd64.deb
+
+
+Ant		: 1.9.4-3 (From Jessie)	, recommended : 1.8.1 or 1.8.2
+Bash	: 4.3.30 (From Jessie)	, recommended : None
+PhantomJS: 2.1.1 (Latest from http://phantomjs.org/download.html) : recommended
+: None
+
+git		: 2.1.4					, recommended : None
+ref: http://josmas.github.io/contributingToAppInventor2/#/
+
+AppEngine Java SDK : 1.9.27 (recommended)
+https://storage.googleapis.com/appengine-sdks/featured/appengine-java-sdk-1.9.27.zip
+
+Python	: 2.7.9
+
+
+Summary:
+# download JDK, AppEngineJavaSDK, and PhantomJS
+# add 'contrib' to sources.list
+# dpkg --add-architecture i386 # not needed
+# apt-get update
+# apt-get install java-package ant git libgl1-mesa-glx libgtk2.0-0 libxslt1.1
+libxxf86vm1
+$ make-jpkg jdk-7u72-linux-x64.tar.gz
+# dpkg -i oracle-java7-jdk_7u72_amd64.deb
+
+TODO: install App Engine SDK and PhantomJS and start first instance :)
