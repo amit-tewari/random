@@ -1,0 +1,18 @@
+Liva X (2GB/32GB varient)
+BIOS v2.16.1242
+OS : Arch (Minimal) with Wireless and Wired connections configured. Pretty stock
+install, no grub/ kernel parameter hacks.
+
+Following settings in BIOS work making this box boot headless (without dummy
+plug, these setting were applied AFTER resetting BIOS to ‘Optimized Defaults’
+(press F3)):
+
+Boot ->
+Operating System Select = Manual
+OS Selection (ACPI) = Windows 8.x
+Boot -> CSM configuration
+CSM Support = Enabled
+
+had success booting Debian 8 (Jessie) also in headless mode, which was again a
+console only install.
+
