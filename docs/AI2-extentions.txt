@@ -1,5 +1,31 @@
 App Inventor2 local install (Debian Jessie):
+Summary (With commit id 74370bc8c11c80988412be635fec43225b386e96 on master):
+- Install minimal Jessie
+- Add contrib component to sources list
+- # apt-get install lib32z1 lib32stdc++6 libgl1-mesa-glx libgtk2.0-0 libxslt1.1 libxxf86vm1 git ant libasound2 libasound2-data bzip2 screen java-package
+- Download JDK from http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html#jdk-7u72-oth-JPR
+- $ make-jpkg jdk-7u72-linux-x64.tar.gz
+- # dpkg -i oracle-java7-jdk_7u72_amd64.deb
+- $ echo 'export JAVA_HOME=/usr/lib/jvm/jdk-7-oracle-x64' >> ~/.bashrc
+- $ wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
+- $ tar xjf phantomjs-2.1.1-linux-x86_64.tar.bz2
+- $ mv phantomjs-2.1.1-linux-x86_64 phantom
+- $ echo 'export PATH=$PATH:~/phantom/bin' >> ~/.bashrc
+- $ . ~/.bashrc
+- $ wget https://storage.googleapis.com/appengine-sdks/featured/appengine-java-sdk-1.9.27.zip
+- unzip appengine-java-sdk-1.9.27.zip
+- $ git clone --depth 1 https://github.com/mit-cml/appinventor-sources.git 
+- $ cd appinventor-sources/appinventor
+- $ ant MakeAuthKey
+- $ ant clean
+- $ ant
+- $ ant tests
+- $ ~/AppEngineJavaSDK/appengine-java-sdk-1.9.27/bin/dev_appserver.sh --port=8888 --address=0.0.0.0 ~/appinventor-sources/appinventor/appengine/build/war/
+- $ cd ~/appinventor-sources/appinventor/buildserver/ && ant RunLocalBuildServer
 
+== ABOVE STEPS SHOULD BE ENOUGH TO GET LOCAL INSTANCE RUNNING ON A Dedian Jessie SYSTEM ==
+
+# http://appinventor.mit.edu/appinventor-sources/
 AI2 reference documentation :
 - http://ai2.appinventor.mit.edu/reference/other/extensions.html
 - https://docs.google.com/document/d/1Xc9yt02x3BRoq5m1PJHBr81OOv69rEBy8LVG_84j9jc/pub#h.6y8gcyo56euq
@@ -12,7 +38,20 @@ Build for Debian : https://wiki.debian.org/JavaPackage
 # apt-get install libgl1-mesa-glx libgtk2.0-0 libxslt1.1 libxxf86vm1
 $ make-jpkg jdk-7u72-linux-x64.tar.gz
 # dpkg -i oracle-java7-jdk_7u72_amd64.deb
+$ export JAVA_HOME=/usr/lib/jvm/jdk-7-oracle-x64
+* http://mshsoftware.com/site/kb/set-java-home-on-linux.html
+$ sudo apt-get install lib32z1 lib32stdc++6
 
+$ export ANT_HOME=/usr/share/ant/
+$ export PATH=${PATH}:${ANT_HOME}/bin
+$ git clone --depth 1 https://github.com/mit-cml/appinventor-sources.git
+$ cd appinventor-sources/appinventor
+$ ant clean
+$ ant
+$ ant MakeAuthKey
+$ AppEngineJavaSDK/appengine-java-sdk-1.9.27/bin/dev_appserver.sh \
+	--port=8888 --address=0.0.0.0 
+	appinventor-sources/appinventor/appengine/build/war/
 
 Ant		: 1.9.4-3 (From Jessie)	, recommended : 1.8.1 or 1.8.2
 Bash	: 4.3.30 (From Jessie)	, recommended : None
@@ -28,6 +67,28 @@ https://storage.googleapis.com/appengine-sdks/featured/appengine-java-sdk-1.9.27
 Python	: 2.7.9
 
 
+Install AppEngine Java SDK:
+* Ref : https://cloud.google.com/appengine/downloads
+To install on Linux:
+- Unzip the App Engine SDK file you downloaded (appengine-java-sdk-1.9.40.zip)
+  to a directory of your choice. For example:
+    unzip appengine-java-sdk-1.9.40.zip
+
+- There is no App Engine installation script that you need to run after
+  unzipping the files.
+
+- Add the appengine-java-sdk-1.9.40 directory to your PATH:
+    export PATH=$PATH:/path/to/appengine-java-sdk-1.9.40/bin/
+
+- The App Engine Java SDK requires Java 7 bytecode level. You can use either
+  Java 7 or Java 8; be sure to set the javac compiler flags to generate 1.7
+bytecode:
+      -source 1.7 -target 1.7
+
+- If you don't have Java or the correct Java version installed, download and
+  install the Java SE Development Kit (JDK) for Linux.
+
+
 Summary:
 # download JDK, AppEngineJavaSDK, and PhantomJS
 # add 'contrib' to sources.list
@@ -39,3 +100,12 @@ $ make-jpkg jdk-7u72-linux-x64.tar.gz
 # dpkg -i oracle-java7-jdk_7u72_amd64.deb
 
 TODO: install App Engine SDK and PhantomJS and start first instance :)
+
+
+OTHER LINKS:
+http://josmasflores.blogspot.in/2013/06/open-source-development-with-app_15.html
+http://stackoverflow.com/questions/12170711/cannot-show-barcode-appinventor-personal-server
+http://appinventor.mit.edu/appinventor-sources/
+https://docs.google.com/document/d/1hIvAtbNx-eiIJcTA2LLPQOawctiGIpnnt0AvfgnKBok/pub
+http://ai2.appinventor.mit.edu/reference/other/extensions.html
+
