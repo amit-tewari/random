@@ -103,8 +103,10 @@ Guest install (Jessie)
 		jessie # ^]^]^]
 	# systemctl start machines.target
 TODO: fix line below
-	#						# remove --network-veth -U from ExecStart from
-machines.service
+# grep Exec /usr/lib/systemd/system/systemd-nspawn@.service
+#ExecStart=/usr/bin/systemd-nspawn --quiet --keep-unit --boot --link-journal=try-guest --network-veth -U --settings=override --machine=%i
+ExecStart=/usr/bin/systemd-nspawn --quiet --keep-unit --boot --link-journal=try-guest -U --settings=override --machine=%i
+	# remove --network-veth from ExecStart from machines.service
 	# systemctl start systemd-nspawn@jessie
 	# machinectl list
 
