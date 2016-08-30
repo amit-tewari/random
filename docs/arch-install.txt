@@ -83,10 +83,11 @@ Post Installation (on ssh)
 	$ cd gnupg1
 	$ gpg --keyserver pgpkeys.mit.edu --recv-keys 2071B08A33BD3F06
 	$ makepkg -sri
-	$ 
-	$ 
-	$ 
-	$ 
+	$ cd ..
+NOTE : For Ubuntu machines
+	$ git clone https://aur.archlinux.org/ubuntu-keyring.git
+	$ cd ubuntu-keyring/
+	$ makepkg -sri
 	$ 
 	$ 
 	$ 
@@ -100,6 +101,7 @@ Guest install (Jessie)
 		jessie # passwd				# set jessie's root password
 		jessie # apt-get install openssh-server
 		jessie # vi /etc/ssh/sshd_config		# use a different Port
+#NOTE: create a sudo user for all guests
 		jessie # ^]^]^]
 	# systemctl start machines.target
 TODO: fix line below
@@ -128,7 +130,8 @@ network={
 	psk="YOUR PRE SHARED KEY"
 	wpa_ptk_rekey=600
 	priority=2
-
+}
+NOTE : can add more 'network' blocks, with ssid, psk and priorities
 	# systemctl enable wpa_supplicant
 	# systemctl enable wpa_supplicant@WIFI-INTERFACE
 	# systemctl enable systemd-networkd
@@ -143,6 +146,13 @@ Name=bond0
 
 [Network]
 DHCP=ipv4
+
+#NOTE : 50-bonding-master.network's [Network] section can be updated to set
+# static IP address too.
+# Address=10.10.10.2/24
+# Gateway=10.10.10.1
+# DNS=8.8.8.8
+
 	# vi 50-bonding-primary.network
 [Match]
 Name=ETHERNET-INTERFACE
