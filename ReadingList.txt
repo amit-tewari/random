@@ -1,0 +1,34 @@
+Go:
+    https://golang.org/doc/effective_go.html
+    https://github.com/golang/go/wiki/Modules
+    https://hackernoon.com/simple-http-middleware-with-go-79a4ad62889b
+      https://gist.github.com/gbbr/85448fc35bf1a008363a4f5da469fa4d
+    https://semaphoreci.com/community/tutorials/building-go-web-applications-and-microservices-using-gin
+    Custom HTTP Routing in Go: https://gist.github.com/reagent/043da4661d2984e9ecb1ccb5343bf438
+    https://dominik.honnef.co/posts/2015/06/statically_compiled_go_programs__always__even_with_cgo__using_musl/
+    Database: http://go-database-sql.org/
+    Libs: https://godoc.org/golang.org/x/net/publicsuffix
+      go-micro : https://micro.mu/blog/2016/03/28/go-micro.html / https://github.com/micro/go-micro
+      alice (middleware): https://github.com/justinas/alice
+    
+    
+Monitoring Icinga2
+  https://www.icinga.com/docs/icinga2/latest/doc/03-monitoring-basics/
+  https://www.linuxtechi.com/install-configure-icinga2-centos-7-rhel-7/
+  https://github.com/Icinga/icinga2/tree/master/itl
+    https://github.com/Icinga/icinga2/tree/master/itl/plugins-contrib.d
+    
+Computing fundamentals
+  What every programmer should know about memory : https://lwn.net/Articles/250967/
+  
+Interesting tools
+  https://dnsdist.org/
+  
+Geo-location
+  Geohash
+  Google open-location-code: https://github.com/google/open-location-code
+
+Hashing
+  xxhash: https://github.com/Cyan4973/xxHash / http://cyan4973.github.io/xxHash/#other-languages
+  
+  
