@@ -7,17 +7,29 @@ Go:
     Custom HTTP Routing in Go: https://gist.github.com/reagent/043da4661d2984e9ecb1ccb5343bf438
     https://dominik.honnef.co/posts/2015/06/statically_compiled_go_programs__always__even_with_cgo__using_musl/
     Database: http://go-database-sql.org/
+    Using Google sign-in: https://skarlso.github.io/2016/06/12/google-signin-with-go/
     Libs: https://godoc.org/golang.org/x/net/publicsuffix
       go-micro : https://micro.mu/blog/2016/03/28/go-micro.html / https://github.com/micro/go-micro
       alice (middleware): https://github.com/justinas/alice
-    
-    
-Monitoring Icinga2
-  https://www.icinga.com/docs/icinga2/latest/doc/03-monitoring-basics/
-  https://www.linuxtechi.com/install-configure-icinga2-centos-7-rhel-7/
-  https://github.com/Icinga/icinga2/tree/master/itl
-    https://github.com/Icinga/icinga2/tree/master/itl/plugins-contrib.d
-    
+
+Rust
+    https://medium.com/@thiagopnts/raspberry-pi-bare-metal-programming-with-rust-a6f145e84024
+    Baremetal Pi3 with Rust : https://github.com/andre-richter/rust-raspi3-tutorial
+
+Monitoring 
+  Icinga2
+    https://www.icinga.com/docs/icinga2/latest/doc/03-monitoring-basics/
+    https://www.linuxtechi.com/install-configure-icinga2-centos-7-rhel-7/
+    https://github.com/Icinga/icinga2/tree/master/itl
+        https://github.com/Icinga/icinga2/tree/master/itl/plugins-contrib.d
+  Prometheus
+    https://prometheus.io/
+
+Configuration Management
+    Ansible
+        https://www.digitalocean.com/community/tutorial_series/getting-started-with-configuration-management
+        
+
 Computing fundamentals
   What every programmer should know about memory : https://lwn.net/Articles/250967/
   
@@ -30,5 +42,12 @@ Geo-location
 
 Hashing
   xxhash: https://github.com/Cyan4973/xxHash / http://cyan4973.github.io/xxHash/#other-languages
+
+Stats
+    2018-05: https://www.forbes.com/sites/bernardmarr/2018/05/21/how-much-data-do-we-create-every-day-the-mind-blowing-stats-everyone-should-read/#305dc43560ba
+    2017-07: https://www.iflscience.com/technology/how-much-data-does-the-world-generate-every-minute/
+    
+Hardware:
+    Wired Door sensor: https://robu.in/product/mc-38-wired-door-window-sensor-magnetic-switch-home-alarm-system/
   
   
