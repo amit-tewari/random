@@ -14,6 +14,8 @@ Go:
     Libs: https://godoc.org/golang.org/x/net/publicsuffix
       go-micro : https://micro.mu/blog/2016/03/28/go-micro.html / https://github.com/micro/go-micro
       alice (middleware): https://github.com/justinas/alice
+    WebApplications in go
+      https://www.jtolio.com/2017/01/writing-advanced-web-applications-with-go/
 
 Rust
     https://medium.com/@thiagopnts/raspberry-pi-bare-metal-programming-with-rust-a6f145e84024
