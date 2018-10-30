@@ -16,6 +16,8 @@ Go:
       alice (middleware): https://github.com/justinas/alice
     WebApplications in go
       https://www.jtolio.com/2017/01/writing-advanced-web-applications-with-go/
+    Best Practices:
+      https://medium.com/capital-one-tech/doing-well-by-doing-bad-writing-bad-code-with-go-part-1-2dbb96ce079a
 
 Rust
     https://medium.com/@thiagopnts/raspberry-pi-bare-metal-programming-with-rust-a6f145e84024
