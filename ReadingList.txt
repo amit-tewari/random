@@ -1,6 +1,7 @@
 Go:
     https://golang.org/doc/effective_go.html
     https://github.com/golang/go/wiki/Modules
+    https://go101.org/article/101.html
     https://hackernoon.com/simple-http-middleware-with-go-79a4ad62889b
       https://gist.github.com/gbbr/85448fc35bf1a008363a4f5da469fa4d
     https://semaphoreci.com/community/tutorials/building-go-web-applications-and-microservices-using-gin
@@ -18,6 +19,8 @@ Go:
       https://www.jtolio.com/2017/01/writing-advanced-web-applications-with-go/
     Best Practices:
       https://medium.com/capital-one-tech/doing-well-by-doing-bad-writing-bad-code-with-go-part-1-2dbb96ce079a
+      https://blog.afoolishmanifesto.com/posts/golang-concurrency-patterns/
+      https://www.youtube.com/watch?v=B5oQnECDJ8g
 
 Rust
     https://medium.com/@thiagopnts/raspberry-pi-bare-metal-programming-with-rust-a6f145e84024
