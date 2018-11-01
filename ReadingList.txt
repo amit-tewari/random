@@ -20,7 +20,7 @@ Go:
     Best Practices:
       https://medium.com/capital-one-tech/doing-well-by-doing-bad-writing-bad-code-with-go-part-1-2dbb96ce079a
       https://blog.afoolishmanifesto.com/posts/golang-concurrency-patterns/
-      https://www.youtube.com/watch?v=B5oQnECDJ8g
+      How Do You Structure Your Go Apps : https://www.youtube.com/watch?v=B5oQnECDJ8g
 
 Rust
     https://medium.com/@thiagopnts/raspberry-pi-bare-metal-programming-with-rust-a6f145e84024
