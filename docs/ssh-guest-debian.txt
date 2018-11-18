@@ -1,0 +1,25 @@
+$ sudo adduser guest
+$ sudo echo "Match User guest" >> /etc/ssh/sshd_config
+$ sudo echo "       PasswordAuthentication yes" >> /etc/ssh/sshd_config
+$ sudo echo "       PermitEmptyPasswords yes" >> /etc/ssh/sshd_config
+$ sudo sed -ie 's/nullok_secure/nullok/' /etc/pam.d/common-auth
+$ sudo systemctl restart sshd
+
+$ su - guest
+
+### Replace startup with your custom program
+$ mkdir bin
+$ echo 'read -p "press any key to exit"' > bin/startup
+$ chmod +x bin/startup
+
+$ echo 'exec startup' >> ~/.profile
+$ ^D
+
+$ sudo chattr +i  /home/guest/.bash*
+$ sudo chattr +i  /home/guest/.profile
+
+## Create any other required files or directories in ~ before this
+## insure any executable/ library used by startup is also immutable
+$ sudo chattr +i  /home/guest/
+$ sudo chattr +i /home/guest/bin/startup
+$ sudo passwd -d guest
