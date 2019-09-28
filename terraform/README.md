@@ -9,7 +9,7 @@ with data persisting in EBS volume
 
 ## initialize
 
-``
+```
 $ terraform init
 ```
 
