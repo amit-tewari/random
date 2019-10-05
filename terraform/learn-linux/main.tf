@@ -10,14 +10,18 @@ provider "aws" {
 #variable "ami_id" {}
 #variable "ami_key_pair_name" {}
 
+output "ami_name" {
+ value = data.aws_ami.latest-debian.name
+}
+
 # Debian Account ID : 379101102735
 data "aws_ami" "latest-debian" {
   most_recent = true
-  owners = ["379101102735"] # Debian
+  owners = ["136693071363"] # Debian 10 SPI account
 
   filter {
       name   = "name"
-      values = ["debian-stretch-hvm-x86_64-*"]
+      values = ["debian-10-amd64-*"]
   }
 
   filter {
@@ -118,7 +122,10 @@ resource "aws_instance" "learn" {
   instance_type = "t2.micro"
   key_name = "${aws_key_pair.learn.key_name}"
   security_groups = ["${aws_security_group.ingress-all-learn.id}"]
-subnet_id = "${aws_subnet.learn.id}"
+  subnet_id = "${aws_subnet.learn.id}"
+  tags = {
+    name = data.aws_ami.latest-debian.name
+  }
 }
 
 resource "aws_eip" "learn" {
