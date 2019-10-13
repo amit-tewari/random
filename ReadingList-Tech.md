@@ -114,3 +114,5 @@ Misc Tools
 - [ ] [Stenographic keyboard / Qweyboard/ Velotype](https://github.com/kqr/qweyboard)
 - [ ] [GNU Readline for shells](https://twobithistory.org/2019/08/22/readline.html)
 - [ ] [Letsencrypt / ACME protocol in bash](https://github.com/Neilpang/acme.sh)
+- [ ] [Pure Bash Bible - Common tasks in bash](https://github.com/dylanaraps/pure-bash-bible)
+
