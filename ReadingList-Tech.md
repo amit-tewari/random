@@ -1,4 +1,5 @@
 Go:
+==
     https://golang.org/doc/effective_go.html
     https://github.com/golang/go/wiki/Modules
     https://go101.org/article/101.html
@@ -23,6 +24,7 @@ Go:
       How Do You Structure Your Go Apps : https://www.youtube.com/watch?v=B5oQnECDJ8g
 
 Rust
+==
     https://medium.com/@thiagopnts/raspberry-pi-bare-metal-programming-with-rust-a6f145e84024
     Baremetal Pi3 with Rust : https://github.com/andre-richter/rust-raspi3-tutorial
 
@@ -59,5 +61,56 @@ Stats
     
 Hardware:
     Wired Door sensor: https://robu.in/product/mc-38-wired-door-window-sensor-magnetic-switch-home-alarm-system/
+
+Terraform
+==
+- [ ] []()
   
-  
+Kubernetes
+==
+- [ ] [Kubernetes with kops and terraform](https://medium.com/bench-engineering/deploying-kubernetes-clusters-with-kops-and-terraform-832b89250e8e)
+- [ ] [HAProxy ingress in kubernetes](https://www.haproxy.com/blog/dissecting-the-haproxy-kubernetes-ingress-controller/)
+- [ ] [HAProxy ingress controller in k8s - II](https://www.haproxy.com/blog/dissecting-the-haproxy-kubernetes-ingress-controller/)
+
+Docker
+==
+- [ ][Debian docker artifacts](https://github.com/debuerreotype/docker-debian-artifacts/blob/master/download.sh)
+
+Vim
+==
+- [ ] [A Byte of Vim](https://vim.swaroopch.com/)
+- [ ] [Vim Script - hardway :)](http://learnvimscriptthehardway.stevelosh.com/)
+
+Ansible
+==
+- [ ] [Ansible using virtual env](https://clouddocs.f5.com/products/orchestration/ansible/devel/usage/virtualenv.html)
+
+DNS
+==
+- [ ] [CLoudflare tor resolver](https://developers.cloudflare.com/1.1.1.1/fun-stuff/dns-over-tor/) / [Blog](https://blog.cloudflare.com/welcome-hidden-resolver/)
+
+Android
+==
+- [ ] [Message forwarder](https://github.com/laudrup/MessagingForwarder)
+
+Databases
+=
+
+Oracle
+==
+- [ ] [Oracle 19c Docs](https://docs.oracle.com/en/database/oracle/oracle-database/19/index.html)
+
+PostgreSQL
+==
+- [ ] []
+
+Arch Linux
+==
+- [ ] Setup an emal server - [Part 1](https://www.unixsheikh.com/tutorials/arch-linux-mail-server-tutorial-part-1-what-is-email.html) / [Part 2](https://unixsheikh.com/tutorials/arch-linux-mail-server-tutorial-part-2-opensmtpd-dovecot-dkimproxy-and-lets-encrypt.html)
+
+Misc Tools
+==
+- [ ] [FZF](https://paweldu.dev/posts/fzf-live-repl/)
+- [ ] [Stenographic keyboard / Qweyboard/ Velotype](https://github.com/kqr/qweyboard)
+- [ ] [GNU Readline for shells](https://twobithistory.org/2019/08/22/readline.html)
+- [ ] [Letsencrypt / ACME protocol in bash](https://github.com/Neilpang/acme.sh)
