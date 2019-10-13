@@ -1,7 +1,7 @@
 - [ ] [Dont delegate most inportantthing](https://apenwarr.ca/log/?m=201812)
 - [ ] [Build an Interpreter - Part 1](https://ruslanspivak.com/lsbasi-part1/) : links to more from this page
 - [ ] [SEBx : SEB technology incubator : solopreneurs](https://sebx.io/)
-- [ ] 
+- [ ] [How to do Changelog, and why](https://keepachangelog.com/en/1.0.0/)
 - [ ] 
 - [ ] 
 - [ ] 
