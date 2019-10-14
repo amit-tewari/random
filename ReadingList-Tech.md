@@ -71,6 +71,7 @@ Kubernetes
 - [ ] [Kubernetes with kops and terraform](https://medium.com/bench-engineering/deploying-kubernetes-clusters-with-kops-and-terraform-832b89250e8e)
 - [ ] [HAProxy ingress in kubernetes](https://www.haproxy.com/blog/dissecting-the-haproxy-kubernetes-ingress-controller/)
 - [ ] [HAProxy ingress controller in k8s - II](https://www.haproxy.com/blog/dissecting-the-haproxy-kubernetes-ingress-controller/)
+- [ ] [Read only dashboard](http://blog.cowger.us/2018/07/03/a-read-only-kubernetes-dashboard.html)
 
 Docker
 ==
