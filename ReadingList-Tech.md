@@ -117,3 +117,4 @@ Misc Tools
 - [ ] [Letsencrypt / ACME protocol in bash](https://github.com/Neilpang/acme.sh)
 - [ ] [Pure Bash Bible - Common tasks in bash](https://github.com/dylanaraps/pure-bash-bible)
 - [ ] [Poor man's SSH VPN](https://github.com/sshuttle/sshuttle)
+- [ ] [Logging with ELK](https://logz.io/learn/complete-guide-elk-stack/)
