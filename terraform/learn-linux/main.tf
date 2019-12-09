@@ -14,6 +14,11 @@ output "ami_name" {
   value = data.aws_ami.latest-debian.name
 }
 
+output "login_message" {
+  value = format("%s%s or \n ssh admin@%s", "login as : ssh admin@",aws_eip.learn.public_ip, aws_eip.learn.public_dns)
+}
+
+
 # Debian Account ID : 379101102735
 data "aws_ami" "latest-debian" {
   most_recent = true
@@ -82,7 +87,7 @@ data "aws_ami" "latest_ecs" {
 
 resource "aws_key_pair" "learn" {
   key_name   = "learn"
-  public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG0RlnTzqxUr8xxKEA2P46QnUIpwNTX+NxuBtqzfcXoo learn"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCkPwK2QYodVCxX0puyXnVaHeUloIzKujrE2O37KCioplbPIk0XTRocU83+9frGYldsEOUsu/qyp/FnyA0klz/Lea0QPbtq9uAfKh4/vpC1YyxVnY+fTW7XiwBZbrddzotSH1KVeWVj5zGkGkS3c6YgX9gXoavbPyh6k8r0OJ4Z6JOUY2lf41cOV3xgxBjMX3YCg7S0SMjep1uP1ui8+z+GWeXsxVKfelxGpS6ZTbkmmahFFi3OfECUMXmKgKHOnwjkwRu8rfH4uO6aiUANZBBs3DNAanU26qPFOh5huuk5GR5y/VBgtOZePlZtAOx99vvyZ1RPYoSzaFiDtyKE7bLGrxERbM4JUYPe/5GTc51+2ecFrf3gPZ2BYk6gYpkVUbwY/JmaRTW093HTjV0qqceNY2mdzXVkKuxNLhG5iN8J9bQ4NF3zAormQKYjmBP5mJqHsrKHIxkE7IApKY7xr5cJagQNV1CI1HK68G7KUL8J6caPEcYtukc/CdSFTaXTZWk= amit"
 }
 
 resource "aws_vpc" "learn" {
