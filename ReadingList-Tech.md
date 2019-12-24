@@ -10,6 +10,7 @@ Go:
     https://dominik.honnef.co/posts/2015/06/statically_compiled_go_programs__always__even_with_cgo__using_musl/
     Database: http://go-database-sql.org/
     Using Google sign-in: https://skarlso.github.io/2016/06/12/google-signin-with-go/
+    [ } https://eli.thegreenplace.net/2019/simple-go-project-layout-with-modules/
     Context: Go Concurrency Patterns: https://blog.golang.org/context
         Pre Go 1.7 : https://www.joeshaw.org/net-context-and-http-handler/
         Post Go 1.7 : https://www.joeshaw.org/revisiting-context-and-http-handler-for-go-17/
