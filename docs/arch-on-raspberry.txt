@@ -42,5 +42,5 @@ BOOT Raspberry pi with new card
 # systemctl restart systemd-resolvd
 # pacman -Syu
 
-# pacman -S pacman-contrib        # for paccache
-# paccahe -rk0                    # remove old cache, paccahe -rk1 after a successful restart is usually good.
+# pacman -S pacman-contrib vim tmux     # for paccache
+# paccahe -rk0                          # remove old cache, paccahe -rk1 after a successful restart is usually good.
