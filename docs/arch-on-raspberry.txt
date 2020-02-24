@@ -1,0 +1,43 @@
+Raspberry Pi Model B v1.2
+
+Start from ; https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3
+but writing to cards directly is pain  :(
+
+so 
+
+# dd if=/dev/zero of=rpi3-arch.img bs=1G count=10       # create 10GB disk image
+# fdisk rpi3-arch.img                                   # follow step 2 from 
+                                                        # https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3
+
+# explanation from 
+# https://unix.stackexchange.com/questions/209566/how-to-format-a-partition-inside-of-an-img-file
+
+# losetup --partscan --show --find rpi3-arch.img
+(returns something like /dev/loop36)
+# lsblk | grep loop36
+# mkfs.vfat /dev/loop36p1
+# mkfs.ext4 /dev/loop36p2
+# mount /dev/loop36p1 boot
+# mount /dev/loop36p2 root
+
+# now follow # https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3 upto step 7
+# dd if=rpi3-arch.img of=/dev/sda bs=1M               # replace /dev/sda with your card device address
+# ps aux | grep 'dd if'                               # find pid of dd process PID_OF_DD
+# cat /proc/PID_OF_DD/fdinfo/{0,1} | grep pos         # can track progress of copy, can be quite slow, specially on used card
+# ls -l rpi3-arch.img                                 # find bytes to be copied
+
+# sync
+
+
+####
+BOOT Raspberry pi with new card
+####
+# pacman-key --init
+# pacman-key --populate archlinuxarm
+# timedatectl set-ntp 0                         # most probably time is out of sync
+# timedatectl set-time "yyyy-MM-dd hh:mm:ss"    # set manually to approximate local time
+# timedatectl set-ntp 1                         # can let it sync with ntp pool now
+          # This also fixes pacman update issues, caused by DNS and ssl errors
+          
+# systemctl restart systemd-resolvd
+# pacman -Syu
