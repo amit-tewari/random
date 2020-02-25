@@ -44,3 +44,14 @@ BOOT Raspberry pi with new card
 
 # pacman -S pacman-contrib vim tmux     # for paccache
 # paccahe -rk0                          # remove old cache, paccahe -rk1 after a successful restart is usually good.
+
+# vim /etc/locale.gen       # uncomment en_US.UTF-8 line
+# locale-gen                # fixes ###tmux: need UTF-8 locale (LC_CTYPE) but have ANSI_X3.4-1968### 
+
+# wifi-menu                 # setup wifi network and create profile
+# netctl list
+# netctl enable $PROFILE    # profile name from step abobe
+
+# pacman -S openntpd
+# systemctl enable openntpd
+# systemctl start openntpd
