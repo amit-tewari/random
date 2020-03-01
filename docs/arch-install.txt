@@ -29,7 +29,7 @@ Installation
 	# mount /dev/mmcblk0p2 /mnt
 	# mkdir -p /mnt/boot/efi
 	# mount /dev/mmcblk0p1 /mnt/boot/efi
-	# pacstrap /mnt base grub-efi-x86_64 efibootmgr dialog wpa_supplicant
+	# pacstrap /mnt base linux mkinitcpio grub-efi-x86_64 efibootmgr dialog wpa_supplicant vim netctl
 	# genfstab -pU /mnt >> /mnt/etc/fstab
 		(note : * pay attention to UUID values for / and /boot/efi in fstab	)
 		(		should match to values listed by 'lsblk'					)
