@@ -12,6 +12,8 @@ Operating System Select = Manual
 OS Selection (ACPI) = Windows 8.x
 Boot -> CSM configuration
 CSM Support = Enabled
+Video = Legacy
+Other PCI devices = Legacy
 
 had success booting Debian 8 (Jessie) also in headless mode, which was again a
 console only install.
