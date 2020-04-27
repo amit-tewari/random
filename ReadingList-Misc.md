@@ -2,9 +2,9 @@
 - [ ] [Build an Interpreter - Part 1](https://ruslanspivak.com/lsbasi-part1/) : links to more from this page
 - [ ] [SEBx : SEB technology incubator : solopreneurs](https://sebx.io/)
 - [ ] [How to do Changelog, and why](https://keepachangelog.com/en/1.0.0/)
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ] [Online book selling](https://www.aer.io/) 
+- [ ] [How to ruin your company](https://a16z.com/2014/07/22/how-to-ruin-your-company-with-one-bad-process/) 
+- [ ] [Corporate surveillance: behind the oneway mirror](https://www.eff.org/wp/behind-the-one-way-mirror) 
 - [ ] 
 - [ ] 
 - [ ] 
