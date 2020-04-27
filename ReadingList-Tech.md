@@ -1,5 +1,8 @@
 Go:
 ==
+    - [ ] [Zen of go](https://dave.cheney.net/2020/02/23/the-zen-of-go)
+    - [ ] [Practical persistence](https://www.alexedwards.net/blog/organising-database-access)
+    - [ ] [Test driven Developement (tdd)](https://leanpub.com/golang-tdd)
     https://golang.org/doc/effective_go.html
     https://github.com/golang/go/wiki/Modules
     https://go101.org/article/101.html
@@ -23,11 +26,15 @@ Go:
       https://medium.com/capital-one-tech/doing-well-by-doing-bad-writing-bad-code-with-go-part-1-2dbb96ce079a
       https://blog.afoolishmanifesto.com/posts/golang-concurrency-patterns/
       How Do You Structure Your Go Apps : https://www.youtube.com/watch?v=B5oQnECDJ8g
-
+    Network Channels
+      https://ipfs.io/ipfs/QmfYeDhGH9bZzihBUDEQbCbTc5k5FZKURMUoUvfmc27BwL/networkchannels/channels_of_channels.html
+    - [ ] [Options handling](https://golang.org/pkg/flag/)/ [FlagSet Parse](https://golang.org/pkg/flag/#FlagSet.Parse)
+    - [ ] [CLI apps](https://github.com/urfave/cli)
 Rust
 ==
     https://medium.com/@thiagopnts/raspberry-pi-bare-metal-programming-with-rust-a6f145e84024
     Baremetal Pi3 with Rust : https://github.com/andre-richter/rust-raspi3-tutorial
+    - [ ] [learn rust, half an hour a day](https://fasterthanli.me/blog/2020/a-half-hour-to-learn-rust/)
 
 Monitoring 
   Icinga2
@@ -73,10 +80,16 @@ Kubernetes
 - [ ] [HAProxy ingress in kubernetes](https://www.haproxy.com/blog/dissecting-the-haproxy-kubernetes-ingress-controller/)
 - [ ] [HAProxy ingress controller in k8s - II](https://www.haproxy.com/blog/dissecting-the-haproxy-kubernetes-ingress-controller/)
 - [ ] [Read only dashboard](http://blog.cowger.us/2018/07/03/a-read-only-kubernetes-dashboard.html)
+- [ ] [MiniKube](https://kubernetes.io/docs/setup/learning-environment/minikube/)
+- [ ] [Helm] / [Plugins] secrets
+- [ ] [HelmFile] / [Plugins]
+- [ ] [Notes on runnning Kubernetes](https://github.com/jnoller/kubernaughty)
 
-Docker
+
+Docker/ Containerization
 ==
 - [ ][Debian docker artifacts](https://github.com/debuerreotype/docker-debian-artifacts/blob/master/download.sh)
+- [ ] [Skopeo : remote image management](https://github.com/containers/skopeo)
 
 Vim
 ==
@@ -94,6 +107,7 @@ DNS
 Android
 ==
 - [ ] [Message forwarder](https://github.com/laudrup/MessagingForwarder)
+- [ ] [Jetpack](https://developer.android.com/jetpack)
 
 Databases
 =
@@ -119,3 +133,56 @@ Misc Tools
 - [ ] [Pure Bash Bible - Common tasks in bash](https://github.com/dylanaraps/pure-bash-bible)
 - [ ] [Poor man's SSH VPN](https://github.com/sshuttle/sshuttle)
 - [ ] [Logging with ELK](https://logz.io/learn/complete-guide-elk-stack/)
+
+Authentication/ iDp/ IAM
+==
+- [ ] [KeyCloak](https://www.keycloak.org/)
+- [ ] 
+
+Security
+==
+- [ ] [seccomp](http://man7.org/linux/man-pages/man2/seccomp.2.html)/ [from wikipedia](https://en.wikipedia.org/wiki/Seccomp)
+
+
+
+Developer productivity
+==
+- [ ] [Missing Semester of CS education](https://missing.csail.mit.edu/)
+
+Internet Technologies
+==
+- [ ] [Certbot/ Letsencrypt](https://letsencrypt.org/)
+- [ ] [HTTPS domains for Localhost](https://github.com/luisfarzati/localdots)
+
+Debian
+==
+- [ ] [Debian chroot in file](https://gist.github.com/cdown/5c5b53e1855d7812dfbc)
+- [ ] [Install on USB](https://willhaley.com/blog/install-debian-usb/)
+
+Arch Linux
+==
+- [ ] [Menu ystem for Awesome WM](https://github.com/Elv13/radical)
+
+CI/CD 
+==
+- [ ] [Concourse vs Jenkins](https://www.praqma.com/stories/jenkins-concourse/)
+
+Cloud/ Common
+==
+- [ ] Terraform
+
+Cloud/AWS
+==
+- [ ] 
+
+Cloud/GCloud
+==
+
+Cloud/Azure
+==
+
+Misc
+==
+ - [ ] [Detecting OS and version](https://github.com/easybuilders/easybuild/wiki/OS_flavor_name_version)
+ - [ ] [Minimal CSS stylesheet](https://andybrewer.github.io/mvp/)
+ - [ ] [Visual Weblog analyser](https://goaccess.io/)
