@@ -133,16 +133,17 @@ Misc Tools
 - [ ] [Pure Bash Bible - Common tasks in bash](https://github.com/dylanaraps/pure-bash-bible)
 - [ ] [Poor man's SSH VPN](https://github.com/sshuttle/sshuttle)
 - [ ] [Logging with ELK](https://logz.io/learn/complete-guide-elk-stack/)
+- [ ] [sed debugger](https://github.com/SoptikHa2/desed/)
 
 Authentication/ iDp/ IAM
 ==
 - [ ] [KeyCloak](https://www.keycloak.org/)
-- [ ] 
+- [ ] [LDAP - OpenLDAP (arch)](https://wiki.archlinux.org/index.php/OpenLDAP)/ [LDAP auth](https://wiki.archlinux.org/index.php/LDAP_authentication)
 
 Security
 ==
 - [ ] [seccomp](http://man7.org/linux/man-pages/man2/seccomp.2.html)/ [from wikipedia](https://en.wikipedia.org/wiki/Seccomp)
-
+- [ ] [secconp-falco-bpf](https://sysdig.com/blog/selinux-seccomp-falco-technical-discussion/)
 
 
 Developer productivity
