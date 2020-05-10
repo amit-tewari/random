@@ -72,7 +72,7 @@ Hardware:
 
 Terraform
 ==
-- [ ] []()
+- [ ] [Vault configuration as code](https://www.devopspro.ru/wp-content/uploads/2019/12/D2-H2-1_Andrey-Devyatkin.pdf)
   
 Kubernetes
 ==
@@ -145,6 +145,7 @@ Security
 ==
 - [ ] [seccomp](http://man7.org/linux/man-pages/man2/seccomp.2.html)/ [from wikipedia](https://en.wikipedia.org/wiki/Seccomp)
 - [ ] [secconp-falco-bpf](https://sysdig.com/blog/selinux-seccomp-falco-technical-discussion/)
+
 
 
 Developer productivity
