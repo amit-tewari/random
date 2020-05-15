@@ -22,3 +22,28 @@ https://elinux.org/RPI_vcgencmd_usage
 * change root and alarm passwords
 * pacman -Syu
 * ssh-copy-id from workstation
+
+```
+[root@alarmpi ~]# systemctl list-unit-files | grep enabled
+autovt@.service                            enabled         disabled     
+dbus-org.freedesktop.network1.service      enabled         disabled     
+dbus-org.freedesktop.resolve1.service      enabled         disabled     
+dbus-org.freedesktop.timesync1.service     enabled         disabled     
+getty@.service                             enabled         enabled      
+haveged.service                            enabled         disabled     
+sshd.service                               enabled         disabled     
+systemd-homed.service                      disabled        enabled      
+systemd-networkd-wait-online.service       enabled         disabled     
+systemd-networkd.service                   enabled         enabled      
+systemd-pstore.service                     disabled        enabled      
+systemd-remount-fs.service                 enabled-runtime disabled     
+systemd-repart.service                     disabled        enabled      
+systemd-resolved.service                   enabled         enabled      
+systemd-timesyncd.service                  enabled         enabled      
+systemd-networkd.socket                    enabled         disabled     
+systemd-userdbd.socket                     disabled        enabled      
+machines.target                            disabled        enabled      
+reboot.target                              disabled        enabled      
+remote-cryptsetup.target                   disabled        enabled      
+remote-fs.target                           enabled         enabled 
+```
