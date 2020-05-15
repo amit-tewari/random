@@ -1,0 +1,24 @@
+# Arch Linux on RaspBerry Pi v.1 + 8GB SD Card
+
+# Installation
+https://archlinuxarm.org/platforms/armv6/raspberry-pi
+
+## Advanced (not done)
+Audio
+Bluetooth
+Video
+CPU/GPU RAM split
+HDMI/Analogue TV-Out
+Camera
+Onboard Hardware Sensors (temp, voltage, watchdog)
+Hardware Random Number Generator
+I/O Pins (GPIO, SPI, I2C, 1-WIRE, Non-Root GPIO)
+
+## Firmware command (vcgencmd)
+https://elinux.org/RPI_vcgencmd_usage
+
+# First steps
+* connect keyboard, HDMI and Ethernet
+* change root and alarm passwords
+* pacman -Syu
+* ssh-copy-id from workstation
