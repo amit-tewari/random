@@ -48,7 +48,7 @@ remote-cryptsetup.target                   disabled        enabled
 remote-fs.target                           enabled         enabled 
 ```
 ```
-# pacman -S vim tmux sudo  # grant alarm sudo rights
+# pacman -S man man-pages vim tmux sudo  # grant alarm sudo rights
 # vim /etc/locale.gen      # enable required locals, with UTF-8 for tmux
 # locale-gen
 add
