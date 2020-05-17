@@ -47,3 +47,13 @@ reboot.target                              disabled        enabled
 remote-cryptsetup.target                   disabled        enabled      
 remote-fs.target                           enabled         enabled 
 ```
+```
+# pacman -S vim tmux sudo  # grant alarm sudo rights
+# vim /etc/locale.gen      # enable required locals, with UTF-8 for tmux
+# locale-gen
+add
+  alias poweroff='sudo /usr/bin/poweroff'
+  alias c='clear'
+  alias swedish-layout='sudo /usr/bin/loadkeys sv-latin1'
+  alias us-layout='sudo /usr/bin/loadkeys us'
+to alarm/.bashrc
