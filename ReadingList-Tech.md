@@ -84,6 +84,9 @@ Kubernetes
 - [ ] [Helm] / [Plugins] secrets
 - [ ] [HelmFile] / [Plugins]
 - [ ] [Notes on runnning Kubernetes](https://github.com/jnoller/kubernaughty)
+- [ ] [Common mistakes](https://blog.pipetail.io/posts/2020-05-04-most-common-mistakes-k8s/)
+- [ ] [helmfile automation](https://bitsofinfo.wordpress.com/2019/07/15/automate-helm-releases-helmfile-helmfile-deploy/)
+- [ ] [Threat matrix](https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/)
 
 
 Docker/ Containerization
@@ -135,6 +138,7 @@ Misc Tools
 - [ ] [Poor man's SSH VPN](https://github.com/sshuttle/sshuttle)
 - [ ] [Logging with ELK](https://logz.io/learn/complete-guide-elk-stack/)
 - [ ] [sed debugger](https://github.com/SoptikHa2/desed/)
+- [ ] [Kafka](https://www.michael-noll.com/blog/2020/01/16/what-every-software-engineer-should-know-about-apache-kafka-fundamentals/)
 
 Authentication/ iDp/ IAM
 ==
@@ -145,6 +149,10 @@ Security
 ==
 - [ ] [seccomp](http://man7.org/linux/man-pages/man2/seccomp.2.html)/ [from wikipedia](https://en.wikipedia.org/wiki/Seccomp)
 - [ ] [secconp-falco-bpf](https://sysdig.com/blog/selinux-seccomp-falco-technical-discussion/)
+- [ ] [TCP reset attack](https://robertheaton.com/2020/04/27/how-does-a-tcp-reset-attack-work/)
+- [ ] [Vault basics](http://vgaltes.com/post/vault-basics/)
+- [ ] [Vault config via terraform ](https://www.devopspro.ru/wp-content/uploads/2019/12/D2-H2-1_Andrey-Devyatkin.pdf)
+- [ ] [Vault orphan tokens](https://bitsofinfo.wordpress.com/2019/12/02/orphan-token-hashicorp-vault/)
 
 
 
@@ -189,3 +197,15 @@ Misc
  - [ ] [Detecting OS and version](https://github.com/easybuilders/easybuild/wiki/OS_flavor_name_version)
  - [ ] [Minimal CSS stylesheet](https://andybrewer.github.io/mvp/)
  - [ ] [Visual Weblog analyser](https://goaccess.io/)
+ - [ ] [SWAP on Linux](https://chrisdown.name/2018/01/02/in-defence-of-swap.html)
+ - [ ] [Add a prompt to your program](https://github.com/buserror/libmish)
+ - [ ] [linux install lockdown (debian)](https://github.com/x08d/lockdown.sh/blob/master/README.md)
+ - [ ] [Diagrams as code](https://diagrams.mingrammer.com/)
+ - [ ] [rich text and terminal formatting in python](https://github.com/willmcgugan/rich)
+ - [ ] [tele-fork: fork on another computer](https://thume.ca/2020/04/18/telefork-forking-a-process-onto-a-different-computer/)
+ 
+Fundamentals
+==
+ - [ ] [MMU / TLB ](http://bitcharmer.blogspot.com/2020/05/t_84.html)
+ - [ ] [Linux System programming](http://cs241.cs.illinois.edu/coursebook/index.html)
+ 
