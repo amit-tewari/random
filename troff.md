@@ -7,8 +7,12 @@ The canonical reference materials for groff are [cstr54](https://www.troff.org/5
 [IETF reference](https://tools.ietf.org/doc/groff/html/mom/intro.html#top)
 
 MOM
-[groff and mom source](https://www.schaffter.ca/shared/groff-and-mom.mom)/ [stypesheet used in book](https://www.schaffter.ca/shared/groff-and-mom-style.mom)
-[Examples](https://www.schaffter.ca/mom/mom-04.html#examples)
+- [mom online reference](https://www.schaffter.ca/mom/momdoc/toc.html)
+- [mom user manual (pdf)](https://www.schaffter.ca/mom/pdf/mom-pdf.pdf)
+- [groff and mom overview](https://www.schaffter.ca/shared/groff-and-mom.pdf)
+  - [groff and mom overview source](https://www.schaffter.ca/shared/groff-and-mom.mom)
+  - [stypesheet used in book](https://www.schaffter.ca/shared/groff-and-mom-style.mom)
+- [Examples](https://www.schaffter.ca/mom/mom-04.html#examples)
 
 ```
 $ info groff        # most complete and up-to-date information
