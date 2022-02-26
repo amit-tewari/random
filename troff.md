@@ -12,6 +12,8 @@ MOM
 - [groff and mom overview](https://www.schaffter.ca/shared/groff-and-mom.pdf)
   - [groff and mom overview source](https://www.schaffter.ca/shared/groff-and-mom.mom)
   - [stypesheet used in book](https://www.schaffter.ca/shared/groff-and-mom-style.mom)
+- [fonts in mom](https://www.schaffter.ca/mom/momdoc/appendices.html)
+  - [font install automation](https://www.schaffter.ca/mom/momdoc/appendices.html#install-font)
 - [Examples](https://www.schaffter.ca/mom/mom-04.html#examples)
 
 ```
