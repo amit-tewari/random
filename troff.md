@@ -23,3 +23,12 @@ $ man groff_diff    # GNU troff vs classival troff
 $ man groff_mom     # mom macros, roff language which is part of groff
 $ man groff_char    # groff glyph names
 ```
+
+### Install more fonts
+
+```
+$ for size in 8 9 10 12 17; do  for type in r i b; do sudo install-font.sh -s -F cm -f +${type^^} cm${type}${size}.pfb ; done ; done
+fontforge not installed. Aborting.
+...
+$ sudo pacman -S fontforge
+```
