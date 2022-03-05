@@ -1,0 +1,102 @@
+.COMMENT
+generate pdf: pdfmom -K utf8 pdfmomtemplate.mom > /tmp/template.pdf
+.COMMENT OFF
+
+.TITLE      "Cover Title"
+.AUTHOR     "Author"
+.COPYRIGHT  "Copyright"
+.MISC       "Template" 
+.PAPER      A4
+
+.DOCTYPE      CHAPTER
+.PRINTSTYLE   TYPESET
+
+\# Print Table of content (TOC) after the Document cover
+.AUTO_RELOCATE_TOC  AFTER_DOCCOVER
+
+\# Center heading for table of content
+.TOC_HEADER_QUAD    CENTER
+
+\# Document cover page
+.DOC_COVER TITLE AUTHOR 
+
+\# Document part cover page
+\# one document part will have multiple related chapters.
+\# Part 1
+.COVERTITLE "Cover 1"
+.COVER      COVERTITLE
+
+.CHAPTER        1 
+.CHAPTER_TITLE  "Chapter 1 Title"
+.START
+.HEADING  1 "Heading 1"
+.PP
+Example paragraph 1.
+.NEWPAGE
+.HEADING  1 "Heading 2"
+.PP
+Example paragraph 2.
+.COLLATE
+
+.CHAPTER        2 
+.CHAPTER_TITLE  "Chapter 2 Title"
+.START
+.HEADING  1 "Heading 1"
+.PP
+Example paragraph 1.
+.HEADING  1 "Heading 2"
+.PP
+Example paragraph 2.
+.HEADING  2 "Heading 2"
+.HEADING  3 "Heading 2"
+.COLLATE
+
+\# Part 2
+.COVERTITLE "Cover 2"
+.COVER      COVERTITLE
+
+.CHAPTER        3
+.CHAPTER_TITLE  "Chapter 3 Title"
+
+.START
+.HEADING 1 "Heading 1"
+.PP
+Example paragraph 1.
+.HEADING 1 "Heading 2"
+.PP
+Example paragraph 2.
+
+.COLLATE
+
+.CHAPTER 4
+.CHAPTER_TITLE "Chapter 4 Title"
+.START
+.HEADING 1 "Heading 1"
+.PP
+Example paragraph 1.
+.HEADING 1 "Heading 2"
+.PP
+Example paragraph 2.
+.COLLATE
+
+.COMMENT
+Copy paste this cover and/or chapter to create more parts and chapters.
+.COMMENT OFF
+\# Part N
+.COVERTITLE "Cover N"
+.COVER      COVERTITLE
+
+.CHAPTER        X 
+.CHAPTER_TITLE  "Chapter X Title"
+.START
+.HEADING  1 "Heading 1"
+.PP
+Example paragraph 1.
+.HEADING  1 "Heading 2"
+.PP
+Example paragraph 2.
+.COLLATE
+
+.FINIS
+.TOC_RV_SWITCH
+.TOC
