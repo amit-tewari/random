@@ -1,0 +1,45 @@
+version: '3'
+services:
+  flyway:
+    image: flyway/flyway
+    command: -url=jdbc:mysql://db -schemas=myschema -user=root -password=P@ssw0rd -connectRetries=60 migrate
+    volumes:
+      - .:/flyway/sql
+    depends_on:
+      - db
+  db:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=P@ssw0rd
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    ports:
+      - 3306:3306
+
+# https://flywaydb.org/documentation/concepts/migrations#overview
+# $ docker run --add-host=host.docker.internal:host-gateway \
+#          --rm -it \
+#          -v ${PWD}:/flyway/sql \
+#          flyway/flyway \
+#             -url='jdbc:mysql://172.17.0.1?allowPublicKeyRetrieval=true&useSSL=false' \
+#             -schemas=myschema \
+#             -user=root \
+#             -password=P@ssw0rd \
+#             -connectRetries=1 \
+#             migrate
+#Flyway is up to date
+#Flyway Community Edition 8.5.10 by Redgate
+#See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.10
+#
+#Database: jdbc:mysql://172.17.0.1 (MySQL 8.0)
+#Creating schema `myschema` ...
+#Creating Schema History table `myschema`.`flyway_schema_history` ...
+#Current version of schema `myschema`: null
+#Migrating schema `myschema` to version "1 - show"
+#+-----------------------+
+#| now()                 |
+#+-----------------------+
+#| 2022-05-01 23:07:16.0 |
+#+-----------------------+
+#
+#Successfully applied 1 migration to schema `myschema`, now at version v1 (execution time 00:00.098s)
+#
