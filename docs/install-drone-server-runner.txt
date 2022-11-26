@@ -1,0 +1,58 @@
+https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-drone-on-ubuntu-20-04
+
+### Install Drone server
+
+$ docker volume create drone-data
+
+# Create an OAuth application
+# Settings -> Developer Settings -> OAuth Apps -> New OAuth App (button)
+# Provide
+# Application name: Drone
+# Homepage URL: http://localhost
+# Authorization callback URL: http://localhost/login
+# "Register application"
+# Generate a new client secret [save this new secret for Drone env file]
+
+$ YOUR_RPC_SECRET=$(openssl rand -hex 16)
+$ YOUR_GITHUB_USER_NAME="FILL HERE"
+$ DRONE_ENV_PATH=${HOME}/data/drone
+$ mkdir -m ${DRONE_ENV_PATH}
+
+# Populate Drone env file ${DRONE_ENV_PATH}/drone-env
+DRONE_SERVER_HOST=localhost
+DRONE_SERVER_PROTO=http
+DRONE_GITHUB_CLIENT_ID=${Client ID from 'Settings > Developer settings > Drone '}
+DRONE_GITHUB_CLIENT_SECRET=${Client Secret from 'Settings > Developer settings > Drone'}
+DRONE_RPC_SECRET=${YOUR_RPC_SECRET}
+DRONE_USER_CREATE=username:${YOUR_GITHUB_USER_NAME},admin:true
+DRONE_USER_FILTER=${YOUR_GITHUB_USER_NAME}
+
+$ docker run --name=drone \
+  --detach \
+  --restart=always \
+  --env-file=${DRONE_ENV_PATH}/drone-env \
+  --volume=drone-data \
+  --publish=80:80 \
+  --publish=443:443 \
+  drone/drone
+
+# visit http://localhost
+# 
+
+### Install Drone runner
+$ docker run --name drone-runner \
+  --detach \
+  --restart=always \
+  --volume=/var/run/docker.sock:/var/run/docker.sock \
+  -e DRONE_RPC_PROTO=http \
+  -e DRONE_RPC_HOST=localhost \
+  -e DRONE_RPC_SECRET=${YOUR_RPC_SECRET} \
+  -e DRONE_RUNNER_CAPACITY=1 \
+  -e DRONE_RUNNER_NAME="docker" \
+  --net=host \
+  drone/drone-runner-docker
+  
+$ docker logs 33320f8aba0b850fdf495bc26e703a96e37d784e08af503e13e684830b016824
+time="2022-11-26T08:01:25Z" level=info msg="starting the server" addr=":3000"
+time="2022-11-26T08:01:25Z" level=info msg="successfully pinged the remote server"
+time="2022-11-26T08:01:25Z" level=info msg="polling the remote server" arch=amd64 capacity=1 endpoint="http://localhost" kind=pipeline os=linux type=docker
